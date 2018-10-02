@@ -15,7 +15,7 @@ Concluimos que el redondeo, a veces, conlleva errores muy grandes.
 \subsection{Espacios normados}
 Si usamos las normas en los problemas numéricos, sabremos si los problemas están bien planteados, los errores cometidos, la convergencia...
 
-\begin{ndef}[Norma] 
+\begin{ndef}[Norma]
 Sea E un espacio vectorial real, diremos que una aplicacion $\Vert$·$\Vert$: E $\rightarrow$ $\mathbb{R}$ es una $\textbf{norma}$ en E si verifica las siguientes propiedades:
 	\begin{nlist}
 	\item Sea x $\in$ E $\Rightarrow$ $\Vert$·$\Vert$ $\geq$ 0.\\
@@ -30,7 +30,7 @@ Sea E un espacio vectorial real. Si este espacio admite una norma, entonces E se
 \end{ndef}
 
 Aunque trabajaremos en $\mathbb{R}$, en $\mathbb{C}$ es lo mismo.\\
-Veamos la interpretación geométrica de la desigualdad triangular, usando la norma euclídea $\mathbb{R}^2$ o $\mathbb{R}^3$.\\ 
+Veamos la interpretación geométrica de la desigualdad triangular, usando la norma euclídea $\mathbb{R}^2$ o $\mathbb{R}^3$.\\
 \includegraphics[scale=0.2]{media/desigualdadtriangular.png}
 
 Las siguientes normas son las que vamos a utilizar.
@@ -119,16 +119,16 @@ Sean X, Y subconjuntos no vacíos de sendos espacios normados y sea f: X $\right
 \end{ndef}
 
 \begin{nprop}
-Sea x $\in \mathbb{R}^N \Rightarrow \Vert x \Vert _\infty \leq \Vert x \Vert _1 \leq N\Vert x \Vert _\infty $ 
+Sea x $\in \mathbb{R}^N \Rightarrow \Vert x \Vert _\infty \leq \Vert x \Vert _1 \leq N\Vert x \Vert _\infty $
 \end{nprop}
 
 \begin{ndef}
 Sean $\Vert$ · $\Vert$ y $\Vert$ · $\Vert _*$ dos normas, se dice que son $\textbf{equivalentes}$ si $\exists c_1, c_2 > 0$ tales que
-\[ \forall x \in E \Rightarrow c_1\Vert x \Vert \leq \Vert x \Vert _* \leq c_2\Vert x \Vert \] 
+\[ \forall x \in E \Rightarrow c_1\Vert x \Vert \leq \Vert x \Vert _* \leq c_2\Vert x \Vert \]
 \end{ndef}
 
 \begin{nprop}
-Sean $\Vert$ · $\Vert$ y $\Vert$ · $\Vert _*$ dos normas, entonces la convergencia de sucesiones y la continuidad son equivalentes para ambas normas. 
+Sean $\Vert$ · $\Vert$ y $\Vert$ · $\Vert _*$ dos normas, entonces la convergencia de sucesiones y la continuidad son equivalentes para ambas normas.
 \end{nprop}
 
 \begin{nth}
@@ -178,6 +178,28 @@ Sean M, N $\in$ $\mathbb{N}$ y consideremos sendas normas en $\mathbb{R}^N$ y $\
 \[ \Vert A \Vert := sup \; \left\lbrace \Vert Ax \Vert : x \in \mathbb{R}^N \wedge \Vert x \Vert = 1 \right\rbrace \qquad \forall A \in \mathbb{R}^{M \times N} \]
 \end{nprop}
 
+\begin{proof}
+$ $\newline
+1. \Vert A \Vert \geq 0 \quad \Vert A \Vert = 0 \Rightarrow A = 0
+
+\Vert A \Vert := \sup\left\lbrace\Vert Ax \Vert: x \in \mathbb{R}^n \> \wedge \Vert x \Vert = 1\right\rbrace \geq \Vert Ax \Vert \geq 0
+
+Por ser norma en \mathbb{R}^M.
+
+\Vert A \Vert := \sup\left\lbrace \Vert Ax \Vert: x \in \mathbb{R}^n \> \wedge \Vert x \Vert = 1\right\rbrace = 0 \geq \Vert Ax \Vert \geq 0
+
+Luego, \Vert Ax \Vert = 0 \Leftrightarrow A = 0
+
+
+
+2. \Vert A+B \Vert \leq \Vert A + \Vert B
+
+3. Sea A \in \mathbb{R}^{MxN}, \lambda \in \mathbb{R}^N
+
+
+
+\end{proof}
+
 \begin{ndef}
 Se define la norma \textbf{inducida} en $\mathbb{R}^{M \times N}$ como:
 \[ \Vert A \Vert := sup \; \left\lbrace \Vert Ax \Vert : x \in \mathbb{R}^N \wedge \Vert x \Vert = 1 \right\rbrace \qquad \forall A \in \mathbb{R}^{M \times N} \]
@@ -210,21 +232,21 @@ Hacemos lo mismo con $\left[ sign(a_{i1}),...,sign(a_{iN}) \right] ^T \; \forall
 \[ \Vert A \Vert _\infty \geq max \; \left\lbrace \sum_{j=1}^N \vert a_{ij} \vert : i = 1,...,M \right\rbrace \]
 Ahora probaremos que $ \Vert A \Vert _\infty \leq max \; \left\lbrace \sum_{j=1}^N \vert a_{ij} \vert : i = 1,...,M \right\rbrace $\\
 Sea x $\in \mathbb{R}^N$ tal que $\Vert x \Vert _\infty = 1$, entonces:
-\[ \Vert Ax \Vert _\infty = \left\Vert 
-\begin{bmatrix} 
+\[ \Vert Ax \Vert _\infty = \left\Vert
+\begin{bmatrix}
 a_{11} &  \cdots & a_{1N} \\
-\vdots & & \vdots 
-\\ a_{M1} & \cdots & a_{MN} \\ \end{bmatrix} 
+\vdots & & \vdots
+\\ a_{M1} & \cdots & a_{MN} \\ \end{bmatrix}
 \begin{bmatrix}
 x_1 \\
 \vdots \\
 x_N \\
 \end{bmatrix}
-\right\Vert _\infty = \left\Vert 
+\right\Vert _\infty = \left\Vert
 \begin{bmatrix}
-\sum_{j=1}^N a_{1j}x_j & ,\ldots , & \sum_{j=1}^N a_{Mj}x_j 
+\sum_{j=1}^N a_{1j}x_j & ,\ldots , & \sum_{j=1}^N a_{Mj}x_j
 \end{bmatrix} ^T
-\right\Vert _\infty = \] \[= max \; \left\lbrace \vert \sum_{j=1}^N a_{ij}x_j \vert : i = 1,...,M \right\rbrace \leq max \; \left\lbrace \sum_{j=1}^N \vert a_{ij} \vert \vert x_j \vert : i = 1,...,M \right\rbrace \leq \] \[ \leq max \; \left\lbrace \sum_{j=1}^N \vert a_{ij} \vert : i = 1,...,M \right\rbrace \] 
+\right\Vert _\infty = \] \[= max \; \left\lbrace \vert \sum_{j=1}^N a_{ij}x_j \vert : i = 1,...,M \right\rbrace \leq max \; \left\lbrace \sum_{j=1}^N \vert a_{ij} \vert \vert x_j \vert : i = 1,...,M \right\rbrace \leq \] \[ \leq max \; \left\lbrace \sum_{j=1}^N \vert a_{ij} \vert : i = 1,...,M \right\rbrace \]
 \end{proof}
 
 \begin{nprop}
@@ -430,7 +452,7 @@ Un problema es $\textbf{estable en $y_0 \in$ Y}$ si su resolvente $g : Y \righta
 Habrá mejor comportamiento cuanto más pequeño sea M.
 
 \begin{nprop}
-g es estable en $y_0 \Rightarrow$ g es continua en $y_0$ 
+g es estable en $y_0 \Rightarrow$ g es continua en $y_0$
 \end{nprop}
 
 Veamos que la implicación $\nLeftarrow$ se cumple al tomar la resolvente del ejemplo anterior en 0, o si se quiere, la función raíz cuadrada en 0.\\
@@ -484,7 +506,7 @@ Sea f(x) = Ax, como A es regular, es unisolvente el problema, luego tiene resolv
 Además, el problema es estable en todo $y_0 \in \mathbb{R}^N$, ya que:
 \[ \Vert g(y) - g(y_0) \Vert _\infty \leq \Vert A^{-1} \Vert _\infty \Vert y - y_0 \Vert _\infty \]
 Ahora calcularemos el condicionamiento relativo.
-\[ c(g, y_0) = \frac{\Vert \frac{\partial g}{\partial y} (y_0) \Vert \Vert y_0 \Vert }{\Vert g(y_0)} = \frac{\Vert A^{-1} \Vert \Vert y_0 \Vert }{\Vert A^{-1} y_0 \Vert } = \frac{\Vert A^{-1} \Vert \Vert y_0 \Vert }{\Vert x_0 \Vert } \] 
+\[ c(g, y_0) = \frac{\Vert \frac{\partial g}{\partial y} (y_0) \Vert \Vert y_0 \Vert }{\Vert g(y_0)} = \frac{\Vert A^{-1} \Vert \Vert y_0 \Vert }{\Vert A^{-1} y_0 \Vert } = \frac{\Vert A^{-1} \Vert \Vert y_0 \Vert }{\Vert x_0 \Vert } \]
 Luego $Ax_0 = y_0$
 \end{ejemplo}
 
@@ -634,7 +656,7 @@ Sea x = -3.4567 y la base b = 10, vamos a representarlo de las dos maneras.
 \end{ejemplo}
 
 Usualmente hay dos representaciones de punto flotante: la precisión simple y la doble.\\
-Si un número no está normalizado, es decir, la cifra significativa principal $a_1$ no es 0, entonces ese número tendrá varias representaciones. Veámoslo en el siguiente ejemplo. 
+Si un número no está normalizado, es decir, la cifra significativa principal $a_1$ no es 0, entonces ese número tendrá varias representaciones. Veámoslo en el siguiente ejemplo.
 
 \begin{ejemplo}
 Sean b = 2, t = 3, L = 1, U = 3 y punto flotante para x = 1, entonces:
@@ -683,7 +705,7 @@ Para un sistema de punto flotante $\mathbb{F}$ (b,t,L,U) con $L \leq 1 \leq U$, 
 \[ \varepsilon _M := b^{1-t} \]
 \end{ndef}
 
-Como $L \leq 1 \leq U \Rightarrow 1 \in \mathbb{F} (b,t,L,U)$ 
+Como $L \leq 1 \leq U \Rightarrow 1 \in \mathbb{F} (b,t,L,U)$
 
 \subsection{Redondeo en sistemas de punto flotante y su aritmética}
 En este apartado vamos a trabajar sobre el contexto de los números máquina representados en el sistema de punto flotante $\mathbb{F}$(b,t,L,U). Primero, tengamos en cuenta lo siguiente:
@@ -694,7 +716,7 @@ En este apartado vamos a trabajar sobre el contexto de los números máquina rep
 	\end{nlist}
 
 \begin{ndef}[Truncatura]
-Fijado un sistema de punto flotante concreto $\mathbb{F}$(b,t,L,U) (al que no se hará referencia si no hay lugar a ambigüedad) si x $\in \mathbb{R}$ es el número real 
+Fijado un sistema de punto flotante concreto $\mathbb{F}$(b,t,L,U) (al que no se hará referencia si no hay lugar a ambigüedad) si x $\in \mathbb{R}$ es el número real
 \[ x =(-1)^sb^e \sum_{n=1}^{\infty} a_nb^{-n} \]
 entonces su $\textbf{truncatura}$ (en dicho sistema) es un número de $\mathbb{F}$(b,t,L,U)
 \[ tr(x) := (-1)^s \cdot (0.a_1...a_t) \cdot b^e \]
@@ -726,7 +748,7 @@ donde
 \[ r_t := \left\{ \begin{array}{lcc}
 a_t & si & a_{t+1} < \frac{b}{2}\\
 \\ a_t +1 & si & a_{t+1} \geq \frac{b}{2}
-\end{array} 
+\end{array}
 \right. \]
 \end{nprop}
 
@@ -757,12 +779,12 @@ Consideremos el sistema de punto flotante $\mathbb{F}(b,t,L,U)$, con $L \leq e \
 \begin{proof}
 $\newline$
 	\begin{nlist}
-	\item 
+	\item
 	\[ \vert x - tr(x) \vert = b^e \left\vert \sum_{n=t+1}^{\infty} a_nb^{-n} \right\vert \leq b^e(b-1) \sum_{n=t+1}^{\infty} b^{-n} = b^{e-t} \]
 	La primera igualdad se da, ya que al restar x y tr(x) el factor común es $b^e$ y se eliminan los términos del 1 hasta la t. En la segunda desigualdad hemos acotado por la cifra más grande. Finalmente, hemos calculado la suma.
-	\item Usando (i) y que $a_1 \geq 1$ tenemos que 
+	\item Usando (i) y que $a_1 \geq 1$ tenemos que
 	\[ \frac{\vert x - tr(x) \vert}{\vert x \vert} \leq \frac{b^{e-t}}{b^e \sum_{n=1}^{\infty} a_nb^{-n}} \leq \frac{b^{e-t}}{b^e \frac{1}{b}} = b^{1-t} = \varepsilon _M \]
-	\item 
+	\item
 	\[ \vert x - rd(x) \vert = b^e \vert (0.a_1...a_ta_{t+1}...) - (0.a_1...r_t) \vert \]
 	 ¿$ \vert (0.a_1...a_ta_{t+1}...) - (0.a_1...r_t) \vert \leq \frac{b^{-t}}{2}$ ?
 		\item[•] Si $a_{t+1} < \frac{b}{2} \; y \; a_t = r_t$:
@@ -770,7 +792,7 @@ $\newline$
 		\item[•] Si $a_{t+1} \geq \frac{b}{2} \; y \; a_t + 1 = r_t$:
 		\[ vert (0.a_1...a_ta_{t+1}...) - (0.a_1...r_t) \vert = \frac{1}{b^t} - \left( \frac{a_{t+1}}{b^{t+1}} + ... \right) \leq \frac{1}{b^t} - \frac{b}{2b^{t+1}} = \frac{b^{-t}}{2} \]
 	\item \[ a_1 \geq 1 \Rightarrow \vert x \vert \geq b^eb^{-1} \Rightarrow _{(iii)} \frac{\vert x - rd(x) \vert }{\vert x \vert} \leq \frac{\frac{1}{2}b^{e-t}}{b^eb^{-1}} = \frac{1}{2}b^{1-t} = \frac{\varepsilon _M}{2} \]
-	\end{nlist}	
+	\end{nlist}
 \end{proof}
 
 \begin{ndef}
@@ -844,7 +866,7 @@ Sea x el dato, $\mu _x$ el error relativo para x y (1 + $\mu _x$)x su valor apro
 	\[ \mu _{x+y} = \frac{x}{x+y} \mu _x + \frac{y}{x+y} \mu _y \]
 	Además, si x e y tienen el mismo signo se puede controlar el error relativo:
 	\[ \vert \mu _{x+y} \vert \leq \vert \mu _x \vert + \vert \mu _y \vert \]
-	Aunque si x e y tienen signos opuestos, $\mu _{x+y}$ puede dispararse si $x + y \approx 0$, generándose un error relativo enorme, conocido como $\textbf{error de cancelación}$. 
+	Aunque si x e y tienen signos opuestos, $\mu _{x+y}$ puede dispararse si $x + y \approx 0$, generándose un error relativo enorme, conocido como $\textbf{error de cancelación}$.
 	\item Multiplicación.\\
 	Los errores relativos de x e y son pequeños.
 	\[ (1 + \mu _x)x \cdot (1 + \mu _y)y = (1 + \mu _x + \mu _y + \mu _x \mu _y)xy \approx (1 + \mu _x + \mu _y)xy \]
@@ -855,9 +877,9 @@ Sea x el dato, $\mu _x$ el error relativo para x y (1 + $\mu _x$)x su valor apro
 	\[ \frac{(1 + \mu _x)x}{(1 + \mu _y)y} = \frac{x}{y}(1 + \mu _x)(1 - \mu _y + \mu _y^2 - \mu _y^3 + \cdots) \approx \frac{x}{y}(1 + \mu _x - \mu _y) \]
 	Por lo que
 	\[ \mu _{x/y} \approx \mu _x - \mu _y \]
-	\end{nlist}	
-	
-	
+	\end{nlist}
+
+
 \part{Tema 2. Resolución numérica de sistemas de ecuaciones lineales}
 En este tema vamos a hacer un tratamiento numérico de los sistemas de ecuaciones lineales. Vamos a usar dos métodos:
 	\begin{nlist}
@@ -874,7 +896,7 @@ Sean la matriz $U \in \mathbb{R}^{N \times N}$ $\textbf{triangular superior}$ co
 \[ x_i = \frac{1}{u_{ii}} \left( b_i - \sum _{j=i+1}^N u_{ij}x_j \right), \; \; con \; \; i = N,...,1 \]
 Sea la matriz $L \in \mathbb{R}^{N \times N}$  $\textbf{triangular inferior}$ con elementos diagonales no nulos, el vector de incógnitas $x \in \mathbb{R}^N$ y el vector de términos independientes b, tenemos el siguiente sistema triangular: $\textbf{Lx = b}$. Este sistema se resuelve por $\textbf{sustitución hacia adelante}$ y el algoritmo para resolverlo es:
 \[ x_i = \frac{1}{l_{ii}} \left( b_i - \sum _{j=1}^{i-1} l_{ij}x_j \right), \; \; con \; \; i = 1,...,N \]
-		
+
 \subsection{Métodos de Gauss y Gauss-Jordan. Pivotaje}
 \begin{nlist}
 \item $\textbf{Método de Gauss}$\\
@@ -890,7 +912,7 @@ Por lo que obtenemos un sistema triangular superior equivalente que se resuelve 
 donde $U := A^{(N)}$, $c := b^{(N)}$.
 	\begin{ejemplo}
 	Sean
-	\[ A := 
+	\[ A :=
 	\begin{bmatrix}
 	1 & 1 & 3 \\
 	0.1 & 1 & 1 \\
@@ -905,7 +927,7 @@ donde $U := A^{(N)}$, $c := b^{(N)}$.
 	Entonces vamos a calcular el sistema triangular superior equivalente.
 	Tenemos que
 	\[ A^{(1)} = A, \; \; b^{(1)} = b \]
-			
+
 	\[ A^{(2)} =
 	\begin{bmatrix}
 	1 & 1 & 3 \\
@@ -919,12 +941,12 @@ donde $U := A^{(N)}$, $c := b^{(N)}$.
 	1.6 \\
 	-2 \\
 	\end{bmatrix} \]
-	
+
 	\[ A^{(3)} =
 	\begin{bmatrix}
 	1 & 1 & 3 \\
 	0 & 0.9 & 0.7 \\
-	0 & 0 & -3.7 \\ 
+	0 & 0 & -3.7 \\
 	\end{bmatrix} \; ,
 	\; \; \;
 	b^{(3)} =
@@ -936,7 +958,7 @@ donde $U := A^{(N)}$, $c := b^{(N)}$.
 	Ahora resolvemos por sustitución hacia atrás y tenemos que
 	\[ x_1 = x_2 = x_3 = 1 \]
 	\end{ejemplo}
-			
+
 	\begin{nprop}
 	Sean $A \in \mathbb{R}^{N \times N}$ una matriz cuadradad y $b \in \mathbb{R}^N$, entonces son equivalentes:
 		\begin{nlist}
@@ -952,7 +974,7 @@ donde $U := A^{(N)}$, $c := b^{(N)}$.
 		es regular.
 		\end{nlist}
 	\end{nprop}
-			
+
 Los errores de redondeo afectan al método de Gauss. Además, evitaremos dividir por coeficientes relativamente pequeños y también evitaremos que algún $a_{kk}^{(k)}$ del método de Gauss sea nulo.
 
 \item $\textbf{Método de Gauss con pivotaje}$ (o pivotaje parcial), variante adaptativa de Gauss.\\
@@ -977,42 +999,42 @@ Finalmente, el sistema equivalente al de partida se resuelve por sustitución ha
 	\begin{nota}
 	El método de Gauss con pivotaje tiene sentido hasta el último paso N-ésimo $\Leftrightarrow$ la matriz de coeficientes A es regular (el sistema es compatible determinado).
 	\end{nota}
-			
+
 	\begin{nota}
 	Otra variante adaptativa del método de Gauss, $\textbf{pivotaje total o completo}$, no solo
 reordena las filas k,..., N de $A^{(k)}$, sino también las columnas k,..., N de forma
 que el elemento de la submatriz de dicha matriz correspondiente a las
 mencionadas filas y columnas tenga a $a_{kk}^{(k)}$ como el elemento de mayor valor absoluto. Sin embargo, requiere un mayor número de operaciones.
 	\end{nota}
-		
+
 \item $\textbf{Método de Gauss-Jordan}$.\\
 Para terminar con las variantes del método de Gauss, mencionemos el llamado $\textbf{método}$ $\textbf{de}$ $\textbf{Gauss-Jordan}$, que consiste en hacer ceros no solo debajo de $a_{kk}^{(k)}$ sino
 también por encima, con el mismo tipo de fórmula. Sin embargo, su coste en operaciones aritméticas es superior.
 \end{nlist}
-		
+
 \subsection{Métodos de factorización}
 Los métodos de factorización se usan cuando tenmos sistemas con la misma matriz de coeficientes, para resolverlos más rápido.
-		
+
 \begin{ndef}[Factorización LU]
 Sea Ax = b un sistema compatible determinado, sea L una matriz triangular inferior y U una matriz triangular superior, entonces:
 \[ \textbf{A = LU} \]
 \end{ndef}
 
 Como A = LU $\Rightarrow$ LUx = b. Por lo que para resolver este sistema, se siguen los siguientes paso:
-		
+
 \begin{nlist}
 \item Calculamos las matrices L y U.
 \item Sea $\textbf{y := Ux}$, entonces tenemos que resolver y de $\textbf{Ly = b}$ por sustitución hacia delante.
 \item Por último, resolvemos x de $\textbf{Ux = y}$ por sustitución hacia atrás.
 \end{nlist}
-			
+
 \begin{ejemplo}
 Sean
 \[ A = \begin{bmatrix}
 1 & 3 & -1 \\
 2 & 8 & 4 \\
 -1 & 3 & 4 \\
-\end{bmatrix} 
+\end{bmatrix}
 \; , \; \;
 b = \begin{bmatrix}
 -1 \\
@@ -1053,7 +1075,7 @@ y_3 \\
 \]
 Lo resolvemos por sustitución hacia adelante y obtenemos que $y_1 = -1, \; y_2 = 4, \; y_3 = -13$.\\
 Ahora resolvemos el sistema Ux = y.
-\[ 
+\[
 \begin{bmatrix}
 1 & 3 & -1 \\
 0 & 2 & 6 \\
@@ -1089,8 +1111,8 @@ m_{31} & m_{32} & 1 & \cdots & 0 \\
 m_{N1} & m_{N2} & m_{N3} & \cdots & 1 \\
 \end{bmatrix}, \]
 donde los coeficientes de la parte inferior de L son los multiplicadores del método de Gauss definidos recursivamente.
-\end{nprop}			
-			
+\end{nprop}
+
 \begin{nth}
 Sea $A \in \mathbb{R}^{N \times N}$ una matriz regular. Entonces equivalen
 	\begin{nlist}
@@ -1099,7 +1121,7 @@ Sea $A \in \mathbb{R}^{N \times N}$ una matriz regular. Entonces equivalen
 	\item Las N submatrices principales de A son regulares.
 	\end{nlist}
 \end{nth}
-			
+
 \begin{nth}
 Sea A una matriz regular, entonces:
 	\begin{nlist}
@@ -1107,45 +1129,45 @@ Sea A una matriz regular, entonces:
 	\item Salvo la eventual permutación de algunas de sus filas, A admite una factorización LU.
 	\end{nlist}
 \end{nth}
-			
+
 \begin{ndef}[Factorización de Doolittle]
 			En el sistema LUx = b, los coeficientes de la diagonal de L son 1, es decir
 \[ l_{11} = \cdots = l_{NN} = 1 \]
 \end{ndef}
-			
+
 A la hora de programar la factorización de Doolittle, el algoritmo es:\\
 Sea i = 1,...,N, entonces
 \[ u_{ij} = a_{ij} - \sum_{k=1}^{i-1} l_{ik}u_{kj}, \; \; con \; j = i,...,N \]
 Y supuesto que $u_{ii} \neq 0$
-\[ l_{ji} = \frac{1}{u_{ii}} \left( a_{ji} - \sum_{k=1}^{i-1} l_{jk}u_{ki} \right), \; \; con \; j = i+1,...,N \]			
-			
+\[ l_{ji} = \frac{1}{u_{ii}} \left( a_{ji} - \sum_{k=1}^{i-1} l_{jk}u_{ki} \right), \; \; con \; j = i+1,...,N \]
+
 \begin{ndef}[Factorización de Crout]
 En el sistema LUx = b, los coeficientes de la diagonal de U son 1, es decir
 \[ u_{11} = \cdots = u_{NN} = 1 \]
 \end{ndef}
-			
+
 \begin{ndef}[Matriz definida positiva]
 Sea $A \in \mathbb{R}^{N \times N}$, se dice que es $\textbf{definida positiva}$ si
 \[ x^TAx > 0, \; \; \; \forall x \in \mathbb{R}^N \backslash \lbrace 0 \rbrace \]
 \end{ndef}
-			
+
 La factorización LU en matrices simétricas definidas positivas es válida siempre. Además, $L = U^T$.
-			
+
 \begin{ndef}[Factorización tipo Cholesky]
 Sea $A \in \mathbb{R}^{N \times N}$ una matriz simétrica y definida positiva. Entonces existe una única matriz triangular superior $U \in \mathbb{R}^{N \times N}$ con coeficientes positivos en su diagonal principal y de forma que
 \[ A = U^TU \]
 \end{ndef}
-			
+
 A la hora de programar la factorización tipo Cholesky, el algoritmo es:\\
 Para todo j = 1,...,N
 \[ i = 1,...,j-1 \; \Rightarrow \; u_{ij} = \frac{1}{u_{ii}} \left( a_{ij} - \sum_{k=1}^{i-1} u_{ki}u_{kj} \right) \]
 \[ u_{jj} = \sqrt{a_{jj} - \sum_{k=1}^{j-1}u_{kj}^2} \]
 Además, se eliminan los elementos de debajo de la diagonal principal, ya que hay simetría.
-			
+
 \begin{nprop}
 Una matriz cuadrada A es simétrica y definida positiva si, y solo si, admite una factorización tipo Cholesky.
 \end{nprop}
-		
+
 \section{Métodos iterativos: métodos de Jacobi y Gauss-Seidel}
 Los métodos iterativos nos dan la solución de un sistema de ecuaciones lineales cuadrado y compatible determinado como límite de una sucesión. Cada término de la sucesión se genera de forma recursiva a partir del anterior, los cuales reciben el nombre de iteradores. Además, cuando tenemos sistemas de grandes dimensiones y la matriz de coeficientes es dispersa (número de coeficientes no nulos relativamente pequeño), tenemos problemas prácticos: análisis matricial de estructuras, método de elementos finitos...
 
@@ -1212,19 +1234,19 @@ es consistente con el sistema unisolvente Ax = b. Entonces método iterativo con
 	Resursivamente obtenemos que $x_n - x = B^n (x_0 - x)$. (2)\\
 	¿ $\Rightarrow$ ?\\
 	Basándonos en la relación de recurrencia (2) y la convergencia para todo $x_0 \in \mathbb{R}^N$, tenemos que
-	\[ \lim_{n \rightarrow \infty} B^n(x_0 - x) 0 
-	\; \Leftrightarrow \; 
+	\[ \lim_{n \rightarrow \infty} B^n(x_0 - x) 0
+	\; \Leftrightarrow \;
 	\lim_{n \rightarrow \infty} B^n = 0
 	\; \Leftrightarrow \;
 	\rho (B) < 1 \]
-	
+
 	¿ $\Leftarrow$ ?\\
 	Sea $x_0 \in \mathbb{R}^N$, como $\rho (B) < 1 \Rightarrow \lim_{n \rightarrow \infty} B^n = 0$.\\
 	Usando la relación de recurrencia (2), $\Vert \cdot \Vert$ en $\mathbb{R}^N$ y su matricial inducida en $\mathbb{R}^{N \times N}$, notada de la misma forma, y con n $\geq 1$, entonces
 	\[ \Vert x_n - x \Vert = \Vert B^n(x_0-x) \Vert \leq \Vert B^n \Vert \Vert x_0 - x \Vert \]
 	Por lo que $\lim_{n \rightarrow \infty}x_n = x$
 	\end{proof}
-	
+
 \begin{nota}
 Como hemos dicho, el método iterativo converge para todo $x_0 \in \mathbb{R}^N$. Aunque esto es falso si el método iterativo es consistente con el sistema y no converge para todo $x_0 \in \mathbb{R}^N$. Por ejemplo, el sistema del ejemplo anterior\\
 b := 0 =: c $\Rightarrow$ consistencia\\
@@ -1387,7 +1409,7 @@ Tenemos el siguiente sistema de ecuaciones
 x_1 \\
 x_2 \\
 x_3 \\
-\end{bmatrix} 
+\end{bmatrix}
 \; = \;
 \begin{bmatrix}
 9 \\
@@ -1426,7 +1448,7 @@ Eso se hace para ambos métodos, pero en el siguiente paso ya distinguimos cada 
 	x_{20 \; 1} = 1.308 & x_{20 \; 2} = -1.67 & x_{20 \; 3} = 2.702
 	\end{array}
 	\right.
-	\]	
+	\]
 	\item[•] Gauss-Seidel:\\
 	con la estimación inicial $x_0$, para todo $n \geq 1$ tenemos que
 	\[ \left\{ \begin{array}{c}
@@ -1444,7 +1466,7 @@ Eso se hace para ambos métodos, pero en el siguiente paso ya distinguimos cada 
 	x_{20 \; 1} = 1.035 & x_{20 \; 2} = -1.961 & x_{20 \; 3} = 2.968
 	\end{array}
 	\right.
-	\]	
+	\]
 	\end{nlist}
 Por lo que en este sistema Gauss-Seidel es más eficiente, pero no en general.
 \end{ejemplo}
@@ -1520,7 +1542,7 @@ Ahora vamos a estudiar el error cometido al resolver mediante un método numéri
 \begin{nprop}
 Sea $A \in \mathbb{R}^{N \times N}$ una matriz regular y $x, u, b \in \mathbb{R}^N$ con $\Vert x \Vert \Vert b \Vert \neq 0$ y de forma que $Ax = b$. Entonces para cualquier norma en $\mathbb{R}^N$ se cumplen las desigualdades:
 \[
-\frac{1}{c(A)} \frac{\Vert Au-b \Vert } {\Vert b \Vert } 
+\frac{1}{c(A)} \frac{\Vert Au-b \Vert } {\Vert b \Vert }
 \leq
 \frac{\Vert x-u \Vert }{\Vert x \Vert }
 \leq
@@ -1545,7 +1567,7 @@ donde c(A) es el condicionamiento de la matriz A relativo a la norma matricial i
 	c(A) \frac{\Vert Au-b \Vert }{\Vert b \Vert }
 	\]
 	\end{proof}
-	
+
 La interpretación de estas desigualdades es que x es la solución del sistema Ax = b y $u$ es la solución aproximada.
 
 La estimación del error relativo de la solución en función del condicionamiento de A y el error relativo generado al tomar Au por b es Au - b, que recibe el nombre de $\textbf{residuo}$, que en general no es nulo.
@@ -1631,7 +1653,7 @@ Dibujándolo, en trazo discontinuo es p(x) y en trazo continuo es f(x), observam
 Sean las coordenadas $(x_0,y_0), (x_1,y_1),...,(x_N,y_N) \in \mathbb{R}^2$, entonces
 \[ \exists ! p \in \mathbb{P} _N : p(x_i) = y_j : x_i \neq x_j \; \; con \; i,j = 0,1,...N \; \; \Rightarrow p(x) = \sum_{i=0}^N f \left[ x_0,...,x_i \right] \omega _i(x) \]
 con
-\[ f \left[ x_0,...,x_i \right] = \frac{f \left[ x_1,...,x_i \right] - f \left[ x_0,...,x_{i-1} \right] }{x_i - x_0} \; \; con \; 1 \leq i \leq N\] 
+\[ f \left[ x_0,...,x_i \right] = \frac{f \left[ x_1,...,x_i \right] - f \left[ x_0,...,x_{i-1} \right] }{x_i - x_0} \; \; con \; 1 \leq i \leq N\]
 y
 \[ \omega _i(x) = \prod _{j=0}^{i-1} (x-x_j) \]
 \end{nth}
@@ -1647,13 +1669,13 @@ x_1 \\
 x_2 \\
 \vdots \\
 x_N
-\end{array} \right| 
+\end{array} \right|
 \begin{array}{ccccc}
 f \left[ x_0 \right] & & & & \\
 f \left[ x_1 \right] & f \left[ x_0,x_1 \right] & & & \\
 f \left[ x_2 \right] & f \left[ x_1;x_2 \right] & f \left[ x_0,x_1,x_2 \right] & & \\
 \vdots & \vdots & \vdots & \ddots & \\
-f \left[ x_N \right] & f \left[ x_{N-1},x_n \right] & f \left[ x_{N-2},x_{N-1},x_n \right] & \cdots & f \left[ x_0,...,x_N \right] 
+f \left[ x_N \right] & f \left[ x_{N-1},x_n \right] & f \left[ x_{N-2},x_{N-1},x_n \right] & \cdots & f \left[ x_0,...,x_N \right]
 \end{array}
 \]
 donde $f \left[ x_0 \right] = f(x_0)$ y $\omega _0(x) = 1$.
@@ -1667,13 +1689,13 @@ Dados los datos $(x_0,y_0)=(0.5,1), \; (x_1,y_1)=(1,0.2), \; (x_2,y_2)=(-0.25,1)
 -0.25 \\
 -0.5 \\
 0.2
-\end{array} \right| 
+\end{array} \right|
 \begin{array}{ccccc}
 1 & & & & \\
 0.2 & -1.6 & & & \\
 1 & -0.64 & -1.28 & & \\
 0.2 & 3.2 & -2.56 & 1.28 & \\
-\frac{1}{3} & \frac{4}{21} & \frac{-1264}{189} & \frac{4876}{945} & \frac{-36664}{2835} 
+\frac{1}{3} & \frac{4}{21} & \frac{-1264}{189} & \frac{4876}{945} & \frac{-36664}{2835}
 \end{array}
 \]
 Algunas cuentas que hemos hecho para calcularlo son:
@@ -1781,7 +1803,7 @@ y
 \[ T_N(cos \theta ) = cos N\theta \]
 
 \[
-\left| 
+\left|
 \begin{array}{c}
 T_0(x)=1 \\
 T_1(x)=x \\
@@ -1798,7 +1820,7 @@ donde $T_i$ es el $\textbf{polinomio de Chebyshev}$ de grado i. Sus propiedades 
 
 Los $\textbf{nodos de Chebyshev}$ son:
 \[
-\left| 
+\left|
 \begin{array}{c}
 T_N \in \mathbb{P}_N \\
 T_N(cos \theta ) = cos(N \theta ) \\
