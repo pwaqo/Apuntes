@@ -179,24 +179,31 @@ Sean M, N $\in$ $\mathbb{N}$ y consideremos sendas normas en $\mathbb{R}^N$ y $\
 \end{nprop}
 
 \begin{proof}
-$ $\newline
-1. \Vert A \Vert \geq 0 \quad \Vert A \Vert = 0 \Rightarrow A = 0
 
-\Vert A \Vert := \sup\left\lbrace\Vert Ax \Vert: x \in \mathbb{R}^n \> \wedge \Vert x \Vert = 1\right\rbrace \geq \Vert Ax \Vert \geq 0
+\begin{enumerate}
+\item \Vert A \Vert \geq 0 \quad \Vert A \Vert = 0 \Leftrightarrow A = 0
+
+\Vert A \Vert := \sup\left\lbrace\Vert Ax \Vert: x \in \mathbb{R}^N \> \wedge \Vert x \Vert = 1\right\rbrace \geq \Vert Ax \Vert \geq 0
 
 Por ser norma en \mathbb{R}^M.
 
-\Vert A \Vert := \sup\left\lbrace \Vert Ax \Vert: x \in \mathbb{R}^n \> \wedge \Vert x \Vert = 1\right\rbrace = 0 \geq \Vert Ax \Vert \geq 0
+\Vert A \Vert := \sup\left\lbrace \Vert Ax \Vert: x \in \mathbb{R}^N \> \wedge \Vert x \Vert = 1\right\rbrace = 0 \geq \Vert Ax \Vert \geq 0
 
 Luego, \Vert Ax \Vert = 0 \Leftrightarrow A = 0
 
+\item \Vert A+B \Vert \leq \Vert A + B \Vert
 
+\item Sea A \in \mathbb{R}^{MxN}, \lambda \in \mathbb{R}^N. Entonces:
 
-2. \Vert A+B \Vert \leq \Vert A + \Vert B
+\begin{align*}
+\Vert \lambda A \Vert := \sup\left\lbrace \Vert \lambda Ax \Vert: x \in \mathbb{R}^N \> \wedge \Vert x \Vert = 1\right\rbrace
+= \sup\left\lbrace \left| \lambda \right| \Vert Ax \Vert: x \in \mathbb{R}^N \> \wedge \Vert x \Vert = 1\right\rbrace = \\
+= \left| \lambda\right | \sup\left\lbrace \Vert Ax \Vert: x \in \mathbb{R}^N \> \wedge \Vert x \Vert = 1\right\rbrace
+= \left| \lambda\right | \sup\left\lbrace \Vert Ax \Vert: x \in \mathbb{R}^N \> \wedge \Vert x \Vert = 1\right\rbrace
+= \left| \lambda\right |  \Vert A \Vert
+\end{align*}
 
-3. Sea A \in \mathbb{R}^{MxN}, \lambda \in \mathbb{R}^N
-
-
+\end{enumerate}
 
 \end{proof}
 
